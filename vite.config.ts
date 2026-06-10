@@ -10,6 +10,7 @@ export default defineConfig({
         },
     }),
     ],
+    base: '/virtual-museum/'
 //     server: {
 //     host: true,  // или '0.0.0.0'
 //   },
