@@ -119,7 +119,7 @@ export default function MainHome() {
         <Header currentLanguage={language} onLanguageChange={changeLanguage} />
 
         <div id='startweb' className='min-h-screen w-full flex justify-center px-12 hero-section bg-cover bg-center bg-no-repeat' 
-        style={{ backgroundImage: "url('/logomuseum.png')" }}>
+        style={{ backgroundImage: "url('/virtual-museum/logomuseum.png')" }}>
             <div className='w-full h-[31.25rem] bg-[#7FC2E8]/71 sticky top-[5.625rem] flex flex-col justify-center items-center main_info'>
                 <p className='text-[6.25rem] font-russo font-[400] leading-[5.625rem] mt-[1.4375rem] mb-[5rem]'>
                     {t.heroTitle}
@@ -151,7 +151,7 @@ export default function MainHome() {
                 </div>
                 <div className='flex justify-center items-start gap-[10rem] flex-wrap'>
                     <div className='w-[46.875rem] max-w-full'>
-                        <img src="/museumphoto.png" className="w-full h-auto object-cover" alt="museum" />
+                        <img src="/virtual-museum/museumphoto.png" className="w-full h-auto object-cover" alt="museum" />
                     </div>
 
                     <motion.p
