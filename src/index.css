@@ -316,6 +316,7 @@ p,
     .pt-\[90px\] {
         padding-top: 20px !important;
     }
+
     .collection_title {
         font-size: 2rem !important;
         line-height: 2.4rem !important;
@@ -324,29 +325,54 @@ p,
         padding: 0 1rem !important;
         word-break: break-word !important;
     }
+
     .flex.flex-col.gap-\[50px\] {
         gap: 2rem !important;
         margin-bottom: 3rem !important;
     }
-    .flex.justify-around.w-full {
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 2rem !important;
+
+    /* ГЛАВНОЕ: принудительно делаем колонку для родительского контейнера */
+    .flex.justify-around.w-full,
+    [class*="justify-around"].w-full,
+    div.flex.justify-around.w-full {
+        display: flex !important;
+        flex-direction: column !important;  /* Вертикальное расположение */
+        align-items: center !important;     /* Центрируем по горизонтали */
+        justify-content: flex-start !important; /* Сверху вниз */
+        gap: 1.5rem !important;            /* Отступ между тайтлом и контентом */
     }
-    .w-\[593px\] {
-        display: none !important;
+
+    /* Если тайтл обернут в отдельный блок — тоже делаем его блочным */
+    .collection_title,
+    [class*="collection_title"] {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
     }
+
+    /* Контентная часть (текст + коллекции) тоже должна идти вертикально */
     .flex.flex-col.items-center.transform {
         width: 90% !important;
         max-width: 90vw !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
+
+    /* Скрываем ненужный широкий блок */
+    .w-\[593px\] {
+        display: none !important;
+    }
+
+    /* Настройка карточек коллекций */
     [class*="w-\[593px\]"] {
         width: 85vw !important;
         max-width: 85vw !important;
         height: auto !important;
         aspect-ratio: 593 / 600 !important;
     }
+
+    /* Текст внутри */
     .font-jost.text-\[\#FFFFFF\].text-\[64px\] {
         font-size: 1.5rem !important;
         line-height: 2rem !important;
@@ -356,6 +382,7 @@ p,
         margin-top: 0.5rem !important;
         word-break: break-word !important;
         white-space: normal !important;
+        text-align: center !important;
     }
 
     /* Список экспонатов */
