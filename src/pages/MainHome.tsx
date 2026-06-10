@@ -114,14 +114,6 @@ export default function MainHome() {
           })
     };
 
-    if (loading) {
-    return (
-        <>
-
-        </>
-    );
-    }
-
     return (
     <>
         <Header currentLanguage={language} onLanguageChange={changeLanguage} />
@@ -199,6 +191,12 @@ export default function MainHome() {
                     </div>
                     
                     <div className='flex items-center justify-center list_collection gap-[1.25rem] overflow-visible'>
+                        {loading ? (
+                            <div className="text-white font-jost text-[24px] text-center py-20">
+                                {t.loading}
+                            </div>
+                        ) : (
+                        <>
                         <button 
                             onClick={handlePrev}
                             className="text-white no-underline hover:text-white cursor-pointer bg-transparent border-none"
@@ -246,6 +244,8 @@ export default function MainHome() {
                             style={{ transform: 'translateY(-3.75rem)' }}>
                             <span className="material-icons text-[7.5rem]">chevron_right</span>
                         </button>
+                         </>
+                        )}
                     </div>
                 </div>
             </div>
