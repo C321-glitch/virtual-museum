@@ -108,12 +108,10 @@ export default function Collections() {
 }
 
     return (
-        <>
-            {/* Шапка с переключателем языка */}
-        <Header currentLanguage={language} onLanguageChange={changeLanguage} />
+        <div className="flex flex-col min-h-screen">
+            <Header currentLanguage={language} onLanguageChange={changeLanguage} />
 
-            {/* Основной контент с отступом сверху, чтобы не перекрывался фиксированной шапкой */}
-            <div className="pt-[90px]">
+            <div className="flex-grow pt-[90px]">
                 <div
                     className="font-russo text-[72px] text-[#FFFFFF] leading-[87px] mb-[100px] text-center collection_title mt-[50px] text-white"
                 >
@@ -151,8 +149,7 @@ export default function Collections() {
                 </div>
             </div>
 
-            {/* Футер */}
             <Footer currentLanguage={language} />
-        </>
-    )
+        </div>
+    );
 }
