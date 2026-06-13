@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { Html5Qrcode } from 'html5-qrcode';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
 import Header from './Header';
 import Footer from './Footer';
@@ -150,12 +150,12 @@ export const Scanner = () => {
                 {t.checking}
               </div>
             )}
-            <button
-              onClick={() => navigate(-1)}
-              className="bg-[#FFB36B] text-[#FFFFFF] font-jost font-[500] text-[1.75rem] sm:text-[2.375rem] rounded-[1rem] sm:rounded-[1.25rem] w-[10rem] sm:w-[14.375rem] h-[3.125rem] sm:h-[3.75rem] flex items-center justify-center transition-all border-none hover:cursor-pointer"
-            >
-              {t.home}
-            </button>
+            <Link 
+                to="/" 
+                className="bg-[#FFB36B] text-[#FFFFFF] font-jost font-[500] text-[36px] leading-[52px] rounded-[20px] w-[292px] h-[65px] flex items-center justify-center px-0 
+                transition-all border-none hover:cursor-pointer no-underline">
+                {t.home}
+            </Link>
           </div>
         </div>
         <style>
