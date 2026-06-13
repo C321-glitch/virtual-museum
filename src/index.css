@@ -324,35 +324,22 @@ p,
         padding: 0 1rem !important;
         word-break: break-word !important;
     }
-
     .flex.flex-col.gap-\[50px\] {
         gap: 2rem !important;
         margin-bottom: 3rem !important;
     }
-    .flex.justify-around.w-full,
-    [class*="justify-around"].w-full,
-    div.flex.justify-around.w-full {
-        display: flex !important;
-        flex-direction: column !important;  
+    .flex.justify-around.w-full {
+        flex-direction: column !important;
         align-items: center !important;
-        justify-content: flex-start !important;
-        gap: 1.5rem !important;
+        justify-content: center !important;
+        gap: 2rem !important;
     }
-    .collection_title,
-    [class*="collection_title"] {
-        display: block !important;
-        width: 100% !important;
-        text-align: center !important;
+    .w-\[593px\] {
+        display: none !important;
     }
     .flex.flex-col.items-center.transform {
         width: 90% !important;
         max-width: 90vw !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-    .w-\[593px\] {
-        display: none !important;
     }
     [class*="w-\[593px\]"] {
         width: 85vw !important;
@@ -369,7 +356,6 @@ p,
         margin-top: 0.5rem !important;
         word-break: break-word !important;
         white-space: normal !important;
-        text-align: center !important;
     }
 
     /* Список экспонатов */
@@ -455,14 +441,20 @@ p,
     .justify-between {
         justify-content: flex-start !important;
     }
-    [class*="w-[593px]"], 
-    .model-container,
+    [class*="w-[593px]"],
     .flex.flex-col.items-center > div:first-child {
+        height: auto !important;
+        border-radius: 12px !important;
+        margin-bottom: 20px !important;
+        padding: 0 !important;
+    }
+    [class*="w-[593px]"],
+    .model-container{
         display: flex !important;
         height: auto !important;
         border-radius: 12px !important;
         margin-bottom: 20px !important;
-        flex-direction: column !important;
+        padding: 0 !important;
     }
 
     /* model-viewer внутри */
