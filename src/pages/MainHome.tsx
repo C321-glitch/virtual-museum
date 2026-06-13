@@ -127,22 +127,31 @@ export default function MainHome() {
                 <p className='text-[2.75rem] leading-[3.75rem] font-jost font-[500] text-center mt-[0px] mb-[1.25rem] w-[37.5rem]'>
                     {t.heroSubtitle}
                 </p>
-                <a href={isMobile ? "scanner" : "#tocollections"} 
-                    onClick={(e) => {
-                    if (!isMobile) {
-                        e.preventDefault();
-                        const element = document.getElementById('tocollections');
-                        if (element) {
-                            element.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }
-                }} className="inline-block no-underline">
-                    <button
-                        className='bg-[#FFB36B] font-jost font-[500] text-[2.375rem] rounded-[1.25rem] w-[14.375rem] h-[3.75rem] 
-                        flex items-center justify-center px-0 transition-all border-none hover:cursor-pointer mb-0'>
-                        {t.startBtn}
-                    </button>
-                </a>
+                {isMobile ? (
+                    <Link to="/scanner" className="inline-block no-underline">
+                        <button
+                            className='bg-[#FFB36B] font-jost font-[500] text-[2.375rem] rounded-[1.25rem] w-[14.375rem] h-[3.75rem] 
+                            flex items-center justify-center px-0 transition-all border-none hover:cursor-pointer mb-0'
+                        >
+                            {t.startBtn}
+                        </button>
+                    </Link>
+                ) : (
+                    <a href="#tocollections" 
+                        onClick={(e) => {
+                            e.preventDefault();
+                            const element = document.getElementById('tocollections');
+                            if (element) {
+                                element.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }} 
+                        className="inline-block no-underline">
+                            <button className='bg-[#FFB36B] font-jost font-[500] text-[2.375rem] rounded-[1.25rem] w-[14.375rem] h-[3.75rem] 
+                                flex items-center justify-center px-0 transition-all border-none hover:cursor-pointer mb-0'>
+                                {t.startBtn}
+                            </button>
+                    </a>
+                )}
             </div>
         </div>
 
