@@ -10,6 +10,7 @@ import AllExhibits from './pages/AllExhibits'
 import { Scanner } from './pages/Scanner';
 
 export default function App() {
+    console.log('window.location.hash:', window.location.hash)
     return (
     <Routes>
         <Route path="/" element={<MainHome />} />
